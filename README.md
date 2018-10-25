@@ -1,6 +1,6 @@
-# MicroLink Sample
+# CarAlgo Sample
 
-This project illustrates the interaction between the Microlink and the iOS platform via BLE written in Swift 4.
+This project illustrates the interaction between the CarAlgo Device and the iOS platform via BLE written in Swift 4.
 
 ## Getting Started
 
@@ -10,12 +10,12 @@ The project contains a folder named "BLE Helpers" and another is called "Models"
 
 In order to install and run correctly this sample you'll need:
 - Xcode 9.2 (mininum).
-- Microlink peripheral.
+- CarAlgo peripheral.
 - A car simulator software or an actual car.
 
 ### Installing
 
-1. Plug the Microlink in the OBD socket of the car.
+1. Plug the CarAlgo Device in the OBD socket of the car.
 2. Activate the Bluetooth on your iOS device and run the sample app.
 3. Connect to the "MicroLink" shown.
 
@@ -34,7 +34,7 @@ class func getProtocolResponseProcess(data:[UInt8], peripheral: CBPeripheral, pe
 In case of a negative response (which means the peripheral didn't find any known vehicle protocol), **The Car Connection status** is set to **CAR_CONNECTION_OFF** and the attempts to restore Car connection are launched.
 
 In case of a positive response  **The Car Connection status** is set to **CAR_CONNECTION_ON**
-This case means that the Microlink is set correctly and the interaction between the car, Microlink and iOS device is established.
+This case means that the CarAlgo Device is set correctly and the interaction between the car, CarAlgo device and iOS device is established.
 
 #### Sending/Getting Vehicle data
 ##### One shot data
@@ -87,7 +87,7 @@ You can process the periodic response in  `func peripheral(_ peripheral: CBPerip
 **Achraf Letaief** achraf.letaief@smarto.fr
 
 ## Contributors
-
+**Toufik Nacer** toufik.nacer@smarto.fr
 **Hatem Drira**  hatem.drira@smarto.fr
 
 ## License
@@ -101,8 +101,7 @@ use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
 the Software, and to permit persons to whom the Software is furnished to do so,
 subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+The person need to buy the CarAlgo device.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
