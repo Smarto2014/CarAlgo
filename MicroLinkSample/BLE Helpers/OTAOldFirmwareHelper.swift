@@ -18,8 +18,9 @@
 import UIKit
 import CoreBluetooth
 
-class OADFirmwareHelper: NSObject {
+class OTAOldFirmwareHelper: NSObject {
 
+    // OTA Helper methods for the old Device
     let OAD_BLOCK_SIZE: UInt16 = 16
     let HAL_FLASH_WORD_SIZE = 4
     
