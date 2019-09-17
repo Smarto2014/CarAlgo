@@ -81,6 +81,18 @@ PeriodicDataServiceHelper.periodicConfiguration(peripheral: peripheral, periodic
 You can process the periodic response in  `func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?)` via the method:
 `periodicResponseProcess(array:[UInt8])`
 
+#### Firmware Upgrade
+
+The methods to achieve the firmware upgrade for the peripheral are implemented in the `OTANewFirmwareHelper` class.
+The process is done by Request/Response mechanism. Here are the steps to do so:
+
+1. Import the binary file which contains the new firmware revision into your project.
+2. Use the method `readStream(path: String)` to extract the **imageId**, **imageVersion** and **totalLength**.
+3. Send the first request to the peripheral; The request is in this form: 
+`[0x03,imageId,imageVersion,totalLength]` on the **otaControlPointChar**.
+4. Getting the response from the first request and extracting the **startPosition**, **blockSize** and the **chunckSize**
+5. Proceed by sending blocks by using `sendBlock(startPosition: Int(startPosition), blockSize: Int(blockSize), chunckSize: Int(chuckSize))`
+6. Repeat step 5 until receiving the value **0x06 on the first byte** of the response which means that all blocks are sent.
 
 ## Author
 
